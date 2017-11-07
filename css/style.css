@@ -38,7 +38,15 @@ header {
 
 .sessionTitle {
   font-size: 46px;
-  margin: 10px 0;
+  margin: 30px 0;
+  position: relative;
+}
+
+.sessionTitle__show-all {
+  font-size: 22px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
 }
 
 footer {
