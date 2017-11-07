@@ -125,8 +125,8 @@
   <script src="js/parallax.js"></script>
   <script type="text/javascript">
     window.sr = ScrollReveal();
-    sr.reveal('header', {scale: 1, origin: 'top', distance: '300px', delay: 500, duration: 700, easing: 'ease'});
-    sr.reveal('.sessionTitle', {delay: 150, scale: 1.0});
-    sr.reveal('.project-item', {delay: 300}, 150);
+    sr.reveal('header', {scale: 1, origin: 'top', distance: '300px', duration: 1000, easing: 'ease'});
+    sr.reveal('.sessionTitle', {delay: 150, scale: 1.0, origin: 'left', easing: 'ease'});
+    sr.reveal('.project-item', {delay: 300, origin: 'left', easing: 'ease'}, 250);
   </script>
 </html>
