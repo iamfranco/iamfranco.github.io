@@ -1,0 +1,156 @@
+body {
+  margin: 0px;
+}
+
+::-moz-selection { color: #fff; background: #aaa;}
+::selection { color: #fff; background: #5d5e5f;}
+
+.container {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.reveal {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+#splash {
+  background: url('res/background.png');
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#splash__container {
+  font-size: 42px;
+  color: #FFE588;
+  width: 300px;
+  position: relative;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  font-family: 'Saira', sans-serif;
+}
+
+.section {
+  padding-top: 1px;
+  padding-bottom: 100px;
+}
+
+.section__title {
+  text-align: center;
+  font-family: 'Saira', sans-serif;
+  font-size: 42px;
+  margin: 30px auto;
+  font-weight: 500;
+  color: #222;
+}
+
+#workflow {
+  padding-bottom: 30px;
+}
+
+#workflow .section__title {
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+.workflow__item {
+  text-align: center;
+  margin-bottom: 25px;
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transition: all 0.3s ease;
+  /*background: blue;*/
+}
+
+.workflow__item__title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 48px;
+}
+
+.workflow__item__graphic {
+  width: 150px;
+}
+
+.workflow__item__detail {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #666;
+  font-size: 18px;
+  /*width: 200px;*/
+  margin: 0 auto;
+}
+
+
+#portfolio {
+  background: #fea;
+  margin: 20px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+#pp .section__title {
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+.pp__item {
+  opacity: 0;
+  transform: scale(1.1);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.pp__item__graphic {
+  border-radius: 5px;
+}
+
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Saira', sans-serif;
+  font-weight: 100;
+}
+
+@media (min-width: 400px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 1000px;
+  }
+}
