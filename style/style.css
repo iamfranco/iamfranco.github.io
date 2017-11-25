@@ -24,11 +24,15 @@ body {
 }
 
 #splash {
-  background: url('res/background.png');
   height: 100vh;
   background-size: cover;
   position: relative;
   margin: 20px;
+}
+
+#splash__bg {
+  position: absolute;
+  top: 0;
   border-radius: 10px;
 }
 

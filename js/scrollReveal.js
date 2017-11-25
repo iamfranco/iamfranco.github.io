@@ -1,28 +1,3 @@
-function $(x) {return document.querySelector(x);}
-function classArray(x) {return document.getElementsByClassName(x);}
-
-var splash = $('#splash');
-var splash__container = $('#splash__container');
-var workflow__title = $('#workflow .section__title');
-var workflow__item = classArray('workflow__item');
-var portfolio = $('#portfolio');
-var pp__item = classArray('pp__item');
-var pp__title = $('#pp .section__title');
-var gear = $('#gear');
-
-// resize splash height to crop bottom
-
-function initSplash() {
-  splash.style.height = (innerHeight - 40) + 'px';
-  splash__container.style.top = (innerHeight/2 - 20 - 33) + 'px';
-}
-initSplash();
-
-window.addEventListener('resize', function() {
-  initSplash();
-})
-
-////////// Scroll Reveal //////////////
 function reveal(el) {el.classList.add('reveal');}
 function isHidden(el) {return !el.classList.contains('reveal');}
 
@@ -37,7 +12,7 @@ function revealSequence(elArray, delay) {
 
 // bool: should we reveal el or not reveal el
 function shouldReveal(el, screenFactor) {
-  return isHidden(el) && this.scrollY > el.offsetTop - innerHeight*screenFactor;
+  return this.scrollY > el.offsetTop - innerHeight*screenFactor && isHidden(el);
 }
 
 window.onscroll = function() {
@@ -48,7 +23,7 @@ window.onscroll = function() {
   if (shouldReveal(pp__title, 5/6)) {reveal(pp__title);}
 
   // scroll reveal for workflow items
-  if (shouldReveal(workflow__item[0], 2/3)) {
+  if (shouldReveal(workflow__item[0], 4/5)) {
     revealSequence(workflow__item, 100);
   }
 
