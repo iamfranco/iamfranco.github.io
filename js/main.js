@@ -11,13 +11,9 @@ var pp__title = $('#pp .section__title');
 var gear = $('#gear');
 
 // resize splash height to crop bottom
-
 function initSplash() {
   splash.style.height = (innerHeight - 40) + 'px';
   splash__container.style.top = (innerHeight/2 - 20 - 33) + 'px';
 }
 initSplash();
-
-window.addEventListener('resize', function() {
-  initSplash();
-})
+window.addEventListener('resize', initSplash);

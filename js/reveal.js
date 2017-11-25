@@ -23,7 +23,7 @@ window.onscroll = function() {
   if (shouldReveal(pp__title, 5/6)) {reveal(pp__title);}
 
   // scroll reveal for workflow items
-  if (shouldReveal(workflow__item[0], 4/5)) {
+  if (shouldReveal(workflow__item[0], 3/4)) {
     revealSequence(workflow__item, 100);
   }
 
@@ -31,7 +31,7 @@ window.onscroll = function() {
   if (shouldReveal(portfolio, 5/6)) {reveal(portfolio);}
 
   // scroll reveal for personal project items
-  if (shouldReveal(pp__item[0], 4/5)) {
+  if (shouldReveal(pp__item[0], 3/4)) {
     revealSequence(pp__item, 100);
   }
 
