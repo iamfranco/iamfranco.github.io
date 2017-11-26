@@ -12,6 +12,15 @@ body {
   margin: 0 auto;
 }
 
+.section--boxed {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.section--boxed .container {
+  padding: 0 30px;
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -116,8 +125,6 @@ a {
 
 #portfolio {
   background: #fea;
-  margin: 20px;
-  border-radius: 10px;
 }
 
 .pp__item {
@@ -145,8 +152,6 @@ a {
 #elements {
   background: #333;
   color: #fff;
-  margin: 20px;
-  border-radius: 10px;
 }
 
 #elements .section__title {
