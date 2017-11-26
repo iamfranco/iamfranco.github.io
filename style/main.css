@@ -1,6 +1,7 @@
 /* Global */
 body {
   margin: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 ::-moz-selection { color: #fff; background: #5d5e5f;}
@@ -141,14 +142,14 @@ a {
   font-weight: 300;
 }
 
-#gear {
+#elements {
   background: #333;
   color: #fff;
   margin: 20px;
   border-radius: 10px;
 }
 
-#gear .section__title {
+#elements .section__title {
   color: #fff;
 }
 

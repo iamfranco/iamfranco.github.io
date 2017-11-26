@@ -36,6 +36,6 @@ window.onscroll = function() {
   }
 
   // scroll reveal for portfolio
-  if (shouldReveal(gear, 5/6)) {reveal(gear);}
+  if (shouldReveal(elements, 5/6)) {reveal(elements);}
 
 }

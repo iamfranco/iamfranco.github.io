@@ -8,7 +8,7 @@ var workflow__item = classArray('workflow__item');
 var portfolio = $('#portfolio');
 var pp__item = classArray('pp__item');
 var pp__title = $('#pp .section__title');
-var gear = $('#gear');
+var elements = $('#elements');
 
 // resize splash height to crop bottom
 function initSplash() {
