@@ -96,34 +96,7 @@ a {
       100% { bottom: 400%;}
 }
 
-#workflow {
-  padding-bottom: 30px;
-}
-
-.workflow__item {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.workflow__item__title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 54px;
-}
-
-.workflow__item__graphic {
-  width: 150px;
-}
-
-.workflow__item__detail {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #666;
-  font-size: 18px;
-  margin: 0 auto;
-}
-
-#portfolio {
+#pp {
   background: #fea;
 }
 
@@ -147,15 +120,6 @@ a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 300;
-}
-
-#elements {
-  background: #333;
-  color: #fff;
-}
-
-#elements .section__title {
-  color: #fff;
 }
 
 footer {

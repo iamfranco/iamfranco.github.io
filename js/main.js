@@ -3,8 +3,6 @@ function classArray(x) {return document.getElementsByClassName(x);}
 
 var splash = $('#splash');
 var splash__container = $('#splash__container');
-var workflow__title = $('#workflow .section__title');
-var workflow__item = classArray('workflow__item');
 var portfolio = $('#portfolio');
 var pp__item = classArray('pp__item');
 var pp__title = $('#pp .section__title');

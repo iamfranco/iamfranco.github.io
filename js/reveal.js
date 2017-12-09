@@ -16,16 +16,8 @@ function shouldReveal(el, screenFactor) {
 }
 
 window.onscroll = function() {
-  // scroll reveal for workflow title
-  if (shouldReveal(workflow__title, 5/6)) {reveal(workflow__title);}
-
   // scroll reveal for personal project title
   if (shouldReveal(pp__title, 5/6)) {reveal(pp__title);}
-
-  // scroll reveal for workflow items
-  if (shouldReveal(workflow__item[0], 3/4)) {
-    revealSequence(workflow__item, 100);
-  }
 
   // scroll reveal for portfolio
   if (shouldReveal(portfolio, 5/6)) {reveal(portfolio);}
