@@ -1,4 +1,5 @@
 function reveal(el) {el.classList.add('reveal');}
+function hide(el) {el.classList.remove('reveal');}
 function isHidden(el) {return !el.classList.contains('reveal');}
 
 // set scroll reveal sequence for element class array
@@ -30,4 +31,7 @@ window.onscroll = function() {
   // scroll reveal for portfolio
   if (shouldReveal(elements, 5/6)) {reveal(elements);}
 
+  // scroll reveal for portfolio
+  if (this.scrollY >= footer.offsetTop + footer.scrollHeight - innerHeight) {reveal(footer);}
+  else {hide(footer);}
 }

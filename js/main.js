@@ -7,6 +7,7 @@ var portfolio = $('#portfolio');
 var pp__item = classArray('pp__item');
 var pp__title = $('#pp .section__title');
 var elements = $('#elements');
+var footer = $('footer');
 
 // resize splash height to crop bottom
 function initSplash() {

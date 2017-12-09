@@ -155,6 +155,6 @@ footer .text-carousel__content {
   transform: translateY(-50%);
 }
 
-footer:hover .text-carousel__content {
+footer.reveal .text-carousel__content {
   transform: translateY(0);
 }
