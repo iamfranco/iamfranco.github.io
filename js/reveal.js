@@ -29,7 +29,7 @@ window.onscroll = function() {
   }
 
   // scroll reveal for portfolio
-  if (shouldReveal(elements, 5/6)) {reveal(elements);}
+  if (shouldReveal(records, 5/6)) {reveal(records);}
 
   // scroll reveal for portfolio
   if (this.scrollY >= footer.offsetTop + footer.scrollHeight - innerHeight) {reveal(footer);}
