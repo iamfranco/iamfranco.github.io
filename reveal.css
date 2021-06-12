@@ -45,7 +45,7 @@
 .scrollList {
     opacity: 0;
     transform: scaleY(0);
-    animation: reveal--unscale .3s forwards;
+    animation: reveal--unscale .5s forwards;
     animation-delay: 0.9s;
 }
 
@@ -53,7 +53,7 @@
     opacity: 0;
     transform: translateY(-30px);
     animation: reveal--untranslate .5s forwards;
-    animation-delay: 1.2s;
+    animation-delay: 1.4s;
 }
 
 .scrollList__itemGroup a {
@@ -61,26 +61,26 @@
 	animation: reveal .5s forwards;
 }
 
-.scrollList__itemGroup a:nth-child(1) {animation-delay: 1.4s;}
-.scrollList__itemGroup a:nth-child(2) {animation-delay: 1.5s;}
-.scrollList__itemGroup a:nth-child(3) {animation-delay: 1.6s;}
-.scrollList__itemGroup a:nth-child(4) {animation-delay: 1.7s;}
-.scrollList__itemGroup a:nth-child(5) {animation-delay: 1.8s;}
-.scrollList__itemGroup a:nth-child(6) {animation-delay: 1.9s;}
-.scrollList__itemGroup a:nth-child(7) {animation-delay: 2.0s;}
-.scrollList__itemGroup a:nth-child(8) {animation-delay: 2.1s;}
-.scrollList__itemGroup a:nth-child(9) {animation-delay: 2.2s;}
+.scrollList__itemGroup a:nth-child(1) {animation-delay: 1.5s;}
+.scrollList__itemGroup a:nth-child(2) {animation-delay: 1.6s;}
+.scrollList__itemGroup a:nth-child(3) {animation-delay: 1.7s;}
+.scrollList__itemGroup a:nth-child(4) {animation-delay: 1.8s;}
+.scrollList__itemGroup a:nth-child(5) {animation-delay: 1.9s;}
+.scrollList__itemGroup a:nth-child(6) {animation-delay: 2.0s;}
+.scrollList__itemGroup a:nth-child(7) {animation-delay: 2.1s;}
+.scrollList__itemGroup a:nth-child(8) {animation-delay: 2.2s;}
+.scrollList__itemGroup a:nth-child(9) {animation-delay: 2.3s;}
 
 #socials__title {
     opacity: 0;
 	animation: reveal .5s forwards;
-    animation-delay: 1.6s;
+    animation-delay: 1.8s;
 }
 
 #socials__iconGroup a {
     opacity: 0;
     animation: reveal .5s forwards;
 }
-#socials__iconGroup a:nth-child(1) {animation-delay: 1.8s;}
-#socials__iconGroup a:nth-child(2) {animation-delay: 1.9s;}
-#socials__iconGroup a:nth-child(3) {animation-delay: 2.0s;}
+#socials__iconGroup a:nth-child(1) {animation-delay: 2.0s;}
+#socials__iconGroup a:nth-child(2) {animation-delay: 2.1s;}
+#socials__iconGroup a:nth-child(3) {animation-delay: 2.2s;}
