@@ -105,6 +105,7 @@ body.dark ::-moz-selection { background: rgba(255, 255, 255, 0.2); /* Gecko Brow
 }
 .scrollList__Arrow.ArrowDisabled {
     opacity: 0.3;
+    cursor: default;
 }
 #scrollList__leftArrow {
     left: 15px;
