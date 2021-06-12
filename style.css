@@ -25,9 +25,8 @@ body.dark ::-moz-selection { background: rgba(255, 255, 255, 0.2); /* Gecko Brow
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: rgb(0, 0, 0);
-    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     text-align: right;
     min-width: 60px;
@@ -37,11 +36,16 @@ body.dark ::-moz-selection { background: rgba(255, 255, 255, 0.2); /* Gecko Brow
     transition: 0.1s ease all;
 }
 #themeToggle:hover {
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1);
 }
 .dark #themeToggle {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.7);
+}
+.dark #themeToggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 1);
 }
 
 #intro {
