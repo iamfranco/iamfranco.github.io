@@ -1,191 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97034752-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-97034752-1');
-    </script>
-
-    <meta charset="utf-8">
+<html lang="en" class="sr">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Franco.</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Saira" rel="stylesheet">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/reveal.css">
-  </head>
-  <body>
-    <div id="splash">
-      <canvas id="splash__bg"></canvas>
-      <div id="splash__container">
-        <div class="i">
-          I
-        </div>
-        <div class="text-carousel">
-          <div class="text-carousel__content">
-            am Franco.<br>
-            code.<br>
-            design.<br>
-            optimise.<br>
-            am Franco.<br>
-          </div>
-        </div>
-      </div>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Franco Chan | Software Dev</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div id="header__photo"></div>
+        <div id="header__name">Franco<br>Chan<strong>.co</strong></div>
     </div>
 
-    <div class="section" id="portfolio">
-      <!-- <div class="section__title">
-        Portfolio
-      </div>
-      <div class="container">
+    <div id="themeToggle">Light Mode</div>
 
-      </div> -->
+    <div id="intro">
+        <div id="intro__word">
+            👋<br> 
+            I'm a software developer, <br>
+            based in Manchester.
+        </div>
+
+        <a href="CV - Franco Chan.pdf" target="_blank" class="roundButton" id="viewCV">
+            <i class="arrow right"></i> 
+            <span class="roundButton__word">View CV</span>
+        </a>
     </div>
 
-    <div class="section section--boxed" id="pp">
-      <div class="section__title">
-        Personal Projects
-      </div>
-      <div class="container row">
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/zombieInteractive/" target="_blank">
-            <img src="res/icons/zombieInteractive.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Zombie Apocalypse Simulator
-            </div>
-          </a>
+    <div class="scrollList">
+        <div class="scrollList__title">Personal Projects</div>
+        <div class="arrow left scrollList__Arrow" id="scrollList__leftArrow"></div>
+        <div class="arrow right scrollList__Arrow" id="scrollList__rightArrow"></div>
+
+        <div class="scrollList__itemGroup">
+            <a href="https://francochan.co/zombieInteractive/" target="_blank"><div class="scrollList__item">
+                <img src="img/zombieInteractive.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Zombie Apocalypse Simulation</div>
+            </div></a>
+
+            <a href="https://francochan.co/game_of_life/" target="_blank"><div class="scrollList__item">
+                <img src="img/gameOfLife.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Game of Life Simulation</div>
+            </div></a>
+
+            <a href="https://francochan.co/trafficWave/" target="_blank"><div class="scrollList__item">
+                <img src="img/trafficWave.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Traffic Wave Simulation</div>
+            </div></a>
+
+            <a href="https://francochan.co/results_visualise/" target="_blank"><div class="scrollList__item">
+                <img src="img/results_visualise.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Exam Results Visualisation</div>
+            </div></a>
+
+            <a href="https://francochan.co/mathPDF/" target="_blank"><div class="scrollList__item">
+                <img src="img/mathPDF.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Maths Questions Generator</div>
+            </div></a>
+
+            <a href="https://francochan.co/clockOrientation/" target="_blank"><div class="scrollList__item">
+                <img src="img/clockOrientation.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Clock Orientation</div>
+            </div></a>
+
+            <a href="https://francochan.co/listCalc/" target="_blank"><div class="scrollList__item">
+                <img src="img/listCalc.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">List-based Calculator</div>
+            </div></a>
+
+            <a href="https://github.com/iamfranco/code_ref" target="_blank"><div class="scrollList__item">
+                <img src="img/code_ref.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Code Reference</div>
+            </div></a>
+
+            <a href="https://github.com/iamfranco/formulaBooklet/blob/master/formula.pdf" target="_blank"><div class="scrollList__item">
+                <img src="img/formulaBooklet.svg"  alt="" class="scrollList__item__icon">
+                <div class="scrollList__item__word">Formula Booklet</div>
+            </div></a>
+
         </div>
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/game_of_life/" target="_blank">
-            <img src="res/icons/gameOfLife.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Game of Life Simulator
-            </div>
-          </a>
-        </div>
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/trafficWave/" target="_blank">
-            <img src="res/icons/trafficWave.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Traffic Wave Simulator
-            </div>
-          </a>
-        </div>
-
-        <!-- <div class="pp__item">
-          <a href="https://iamfranco.github.io/the_odin_project/pomodoro/" target="_blank">
-            <img src="res/icons/pomodoro.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Pomodoro Timer
-            </div>
-          </a>
-        </div> -->
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/listCalc/" target="_blank">
-            <img src="res/icons/listCalc.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              List-based Calculator
-            </div>
-          </a>
-        </div>
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/mathPDF/" target="_blank">
-            <img src="res/icons/mathPDF.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Maths Questions Generator
-            </div>
-          </a>
-        </div>
-
-        <!-- <div class="pp__item">
-          <a href="https://iamfranco.github.io/areaSquare/" target="_blank">
-            <img src="res/icons/areaSquare.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Represent Area by a Square
-            </div>
-          </a>
-        </div> -->
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/clockOrientation/" target="_blank">
-            <img src="res/icons/clockOrientation.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Clock Orientation
-            </div>
-          </a>
-        </div>
-
-      </div>
     </div>
 
-    <div class="section" id="records">
-      <div class="section__title">
-        Records
-      </div>
-      <div class="container row">
-
-        <div class="pp__item">
-          <a href="https://github.com/iamfranco/code_ref" target="_blank">
-            <img src="res/icons/code_ref.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Code Reference
-            </div>
-          </a>
+    <div id="socials">
+        <div id="socials__title">
+            More of me, on
         </div>
 
-        <div class="pp__item">
-          <a href="https://github.com/iamfranco/formulaBooklet/blob/master/formula.pdf" target="_blank">
-            <img src="res/icons/formulaBooklet.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Formula Booklet
-            </div>
-          </a>
+        <div id="socials__iconGroup">
+            <a href="https://www.linkedin.com/in/kffchan/"                     target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/linkedin.svg"  alt="" class="icon"><br><span class="icon__word">LinkedIn </span></div></a>
+            <a href="https://github.com/iamfranco"                             target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/github.svg"    alt="" class="icon"><br><span class="icon__word">GitHub   </span></div></a>
+            <a href="https://codepen.io/iamfranco/"                            target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/codepen.svg"   alt="" class="icon"><br><span class="icon__word">CodePen  </span></div></a>
+            <!-- <a href="https://www.instagram.com/francochanco/"                  target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/instagram.svg" alt="" class="icon"><br><span class="icon__word">Instagram</span></div></a> -->
+            <!-- <a href="" target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/twitter.svg"   alt="" class="icon"><br><span class="icon__word">Twitter  </span></div></a> -->
+            <!-- <a href="https://www.youtube.com/channel/UCycoEGdPVpxe6LMx4bDYihA" target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/youtube.svg"   alt="" class="icon"><br><span class="icon__word">YouTube  </span></div></a> -->
+            <!-- <a href="https://www.twitch.tv/francochanco"                       target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/twitch.svg"    alt="" class="icon"><br><span class="icon__word">Twitch   </span></div></a> -->
         </div>
-
-        <div class="pp__item">
-          <a href="https://iamfranco.github.io/results_visualise/" target="_blank">
-            <img src="res/icons/results_visualise.svg" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-              Results Visualisation
-            </div>
-          </a>
-        </div>
-
-        <div class="pp__item">
-          <a href="" target="_blank">
-            <img src="" alt="" class="pp__item__graphic">
-            <div class="pp__item__title">
-
-            </div>
-          </a>
-        </div>
-
-
-
-      </div>
     </div>
+
+    
 
     <footer>
-      <div class="text-carousel">
-        <div class="text-carousel__content">
-
-          <a href="https://github.com/iamfranco" target="_blank">GitHub</a>
-          <a href="https://codepen.io/iamfranco/" target="_blank">CodePen</a>
-          <a href="https://www.linkedin.com/in/kffchan/" target="_blank">LinkedIn</a> <br>
-          made by myself
-        </div>
-      </div>
+        <span id="year">2020</span> FRANCOCHAN.CO
     </footer>
-  </body>
-  <script src="js/main.js"></script>
-  <script src="js/splash__bg.js"></script>
-  <script src="js/reveal.js"></script>
+</body>
+<script src="main.js"></script>
 </html>
