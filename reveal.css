@@ -44,8 +44,7 @@
 
 .scrollList {
     opacity: 0;
-    transform: scaleY(0);
-    animation: reveal--unscale .5s forwards;
+    animation: reveal .5s forwards;
     animation-delay: 0.9s;
 }
 
