@@ -115,6 +115,10 @@ let scrolling = function(e) {
 }
 slider.addEventListener('scroll', scrolling, false);
 
+// check if device is tablet
+const userAgent = navigator.userAgent.toLowerCase();
+const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+
 // turn project icon into gif on hover
 var iconToGif = function(event) {
     target = event.target;
@@ -130,7 +134,9 @@ var gifToIcon = function(event) {
         target.setAttribute('src', target.getAttribute('srcicon'));
     }
 }
-document.querySelectorAll('.scrollList__item__icon').forEach(item => {
-    item.addEventListener('mouseenter', iconToGif);
-    item.addEventListener('mouseleave', gifToIcon);
-})
+if (!isTablet) {
+    document.querySelectorAll('.scrollList__item__icon').forEach(item => {
+        item.addEventListener('mouseenter', iconToGif);
+        item.addEventListener('mouseleave', gifToIcon);
+    })
+}
