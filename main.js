@@ -114,3 +114,23 @@ let scrolling = function(e) {
     disableSlideArrow(slider);
 }
 slider.addEventListener('scroll', scrolling, false);
+
+// turn project icon into gif on hover
+var iconToGif = function(event) {
+    target = event.target;
+    if (target.hasAttribute('srchover')) {
+        target.setAttribute('srcicon', target.getAttribute('src'));
+        target.setAttribute('src', target.getAttribute('srchover'));
+    }
+}
+var gifToIcon = function(event) {
+    target = event.target;
+    if (target.hasAttribute('srcicon')) {
+        target.setAttribute('srchover', target.getAttribute('src'));
+        target.setAttribute('src', target.getAttribute('srcicon'));
+    }
+}
+document.querySelectorAll('.scrollList__item__icon').forEach(item => {
+    item.addEventListener('mouseenter', iconToGif);
+    item.addEventListener('mouseleave', gifToIcon);
+})
