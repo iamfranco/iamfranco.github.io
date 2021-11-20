@@ -8,9 +8,8 @@ yearSpan.innerHTML = new Date().getFullYear();
 const themeToggler = $('#themeToggle');
 const body = $('body');
 var isDark = false;
-document.cookie = "name=oeschger; SameSite=None; Secure";
-var cookieIsDark = eval(getCookie('isDarkTheme'));
-if (cookieIsDark !== null) {isDark = cookieIsDark;}
+var localStorageIsDark = eval(localStorage.getItem('isDarkTheme'));
+if (localStorageIsDark !== null) {isDark = localStorageIsDark;}
 if (isDark) {
     themeToggler.innerHTML = 'Dark Mode';
     body.classList.add("dark");
@@ -27,25 +26,7 @@ function toggleTheme() {
         themeToggler.innerHTML = 'Light Mode';
         body.classList.remove("dark");
     }
-    setCookie('isDarkTheme', isDark.toString(), false);
-}
-
-// cookie to store dark theme toggle value 
-function setCookie(name,value) {
-    document.cookie = name + "=" + (value || "") + "; SameSite=None; Secure" + "; path=/";
-}
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-function eraseCookie(name) {   
-    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    localStorage.setItem('isDarkTheme', isDark.toString());
 }
 
 // drag horizontal slider (personal projects)
