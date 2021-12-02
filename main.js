@@ -1,3 +1,6 @@
+// update emojis
+twemoji.parse(document.body);
+
 // set year
 $('#year').innerHTML = new Date().getFullYear()
 

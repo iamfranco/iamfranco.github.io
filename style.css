@@ -345,6 +345,16 @@ footer {
     margin-top: 48px;
 }
 
+.attribution {
+    margin-top: 20px;
+}
+.attribution a {
+    color: var(--color-hl);
+}
+body.dark .attribution a {
+    color: var(--color-hl-dark);
+}
+
 .roundButton {
     display: block;
     width: 96px;
