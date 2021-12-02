@@ -1,68 +1,49 @@
-function $(x) {return document.querySelector(x);}
-
 // set year
-const yearSpan = $('#year');
-yearSpan.innerHTML = new Date().getFullYear();
+$('#year').innerHTML = new Date().getFullYear()
 
 // toggle theme
-const themeToggler = $('#themeToggle');
-const body = $('body');
-var isDark = false;
-var localStorageIsDark = eval(localStorage.getItem('isDarkTheme'));
-if (localStorageIsDark !== null) {isDark = localStorageIsDark;}
+const themeToggler = $('#themeToggle')
+const body = $('body')
+let isDark = false
+let localStorageIsDark = eval(localStorage.getItem('isDarkTheme'))
+if (localStorageIsDark !== null) isDark = localStorageIsDark
 if (isDark) {
-    themeToggler.innerHTML = 'Dark Mode';
-    body.classList.add("dark");
+    themeToggler.innerHTML = 'Dark Mode'
+    body.classList.add("dark")
 }
-
-themeToggler.addEventListener("click", toggleTheme);
-function toggleTheme() {
-    body.style.transition = "0.1s ease all"; // ensure
-    isDark = !isDark;
+themeToggler.addEventListener("click", function() {
+    body.style.transition = "0.1s ease all"
+    isDark = !isDark
     if (isDark) {
-        themeToggler.innerHTML = 'Dark Mode';
-        body.classList.add("dark");
+        themeToggler.innerHTML = 'Dark Mode'
+        body.classList.add("dark")
     } else {
-        themeToggler.innerHTML = 'Light Mode';
-        body.classList.remove("dark");
+        themeToggler.innerHTML = 'Light Mode'
+        body.classList.remove("dark")
     }
-    localStorage.setItem('isDarkTheme', isDark.toString());
-}
+    localStorage.setItem('isDarkTheme', isDark.toString())
+})
 
 // check if device is tablet
-const userAgent = navigator.userAgent.toLowerCase();
-const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+const userAgent = navigator.userAgent.toLowerCase()
+const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent)
 
 // turn project icon into gif on hover
-var iconToGif = function(event) {
-    target = event.target;
-    if (target.hasAttribute('srchover')) {
-        target.setAttribute('srcicon', target.getAttribute('src'));
-        target.setAttribute('src', target.getAttribute('srchover'));
-    }
-}
-var gifToIcon = function(event) {
-    target = event.target;
-    if (target.hasAttribute('srcicon')) {
-        target.setAttribute('srchover', target.getAttribute('src'));
-        target.setAttribute('src', target.getAttribute('srcicon'));
-    }
-}
 if (!isTablet) {
     document.querySelectorAll('.scrollList__item__icon').forEach(item => {
-        item.addEventListener('mouseenter', iconToGif);
-        item.addEventListener('mouseleave', gifToIcon);
+        item.addEventListener('mouseenter', iconToGif)
+        item.addEventListener('mouseleave', gifToIcon)
     })
 }
 
-// project items
+// project items section
 
 let showCode = false
 const projectFilters = document.getElementById('projectFilters')
 const projectContainer = document.getElementById('projectContainer')
 const showCodeBtn = document.getElementById('projectShowCodeBtn')
 populateFiltersDOM(projects)
-populateProjectItemsDOM(projects)
+populateProjectItemsDOM(projects, {firstCall: true})
 
 projectFilters.addEventListener('click', function(ev) {
     if (ev.target.classList.contains('filterTag')) {
@@ -71,10 +52,39 @@ projectFilters.addEventListener('click', function(ev) {
         if (ev.target.id == 'filterShowAll') { // show all
             populateProjectItemsDOM(projects)
         } else { // apply tag filtering
-            populateProjectItemsDOM(projects, tag)
+            populateProjectItemsDOM(projects, {filterTag: tag})
         }
     }
 })
+
+showCodeBtn.addEventListener('click', function() {
+    showCode = !showCode
+    if (showCode) showCodeBtn.classList.add('active')
+    else showCodeBtn.classList.remove('active')
+    updateProjectLinks()
+})
+
+if (!isTablet) {
+    projectContainer.addEventListener('mouseover', function(ev) {
+        const item = ev.target.closest('.projectItem')
+        if (item != null) {
+            iconToGif(item)
+        }
+    })
+
+    projectContainer.addEventListener('mouseout', function(ev) {
+        const item = ev.target.closest('.projectItem')
+        if (item != null) {
+            gifToIcon(item)
+        }
+    })
+}
+
+// scrollShow track items
+scrollShow.addItems()
+
+
+function $(x) {return document.querySelector(x)}
 
 function getAllTags(projects) {
     let tags = []
@@ -113,13 +123,17 @@ function updateFiltersActiveTag(tag) {
     }
 }
 
-function populateProjectItemsDOM(projects, filterTag=null) {
+function populateProjectItemsDOM(projects, options={}) {
+    const filterTag = options.filterTag || null
+    const firstCall = options.firstCall || false
     let projectsFiltered = projects
     if (filterTag != null) {
         projectsFiltered = projects.filter(function(item) {
             return item.tags.includes(filterTag)
         })
     }
+    const scrollShowClass = firstCall ? 'scrollShow' : ''
+    const scrollShowAttr = firstCall ? 'data-scroll-show-element-percent="0"' : ''
     projectContainer.innerHTML = ''
     for (let i = 0; i < projectsFiltered.length; i++) {
         const item = projectsFiltered[i]
@@ -130,7 +144,11 @@ function populateProjectItemsDOM(projects, filterTag=null) {
         })
         projectContainer.insertAdjacentHTML('beforeend',
             `
-            <a href="" target="_blank" class="projectLink" hrefdemo="${item.link}" hrefcode="${item.link_code}">
+            <a href="" target="_blank" 
+                class="projectLink ${scrollShowClass}" 
+                ${scrollShowAttr}
+                hrefdemo="${item.link}" 
+                hrefcode="${item.link_code}">
                 <div class="projectItem">
                     <div class="projectThumbnailContainer">
                         <img class="projectThumbnail" 
@@ -151,13 +169,6 @@ function populateProjectItemsDOM(projects, filterTag=null) {
     updateProjectLinks()
     scrollShow.onResize()
 }
-
-showCodeBtn.addEventListener('click', function() {
-    showCode = !showCode
-    if (showCode) showCodeBtn.classList.add('active')
-    else showCodeBtn.classList.remove('active')
-    updateProjectLinks()
-})
 
 function updateProjectLinks() {
     const projectLink = projectContainer.getElementsByClassName('projectLink')
@@ -181,35 +192,17 @@ function updateProjectLinks() {
 }
 
 // turn project icon into gif on hover
-var iconToGif = function(item) {
+function iconToGif(item) {
     const target = item.getElementsByClassName('projectThumbnail')[0]
     if (target.hasAttribute('srcgif') && target.getAttribute('srcgif').length) {
         target.setAttribute('srcicon', target.getAttribute('src'))
         target.setAttribute('src', target.getAttribute('srcgif'))
     }
 }
-var gifToIcon = function(item) {
+function gifToIcon(item) {
     const target = item.getElementsByClassName('projectThumbnail')[0]
     if (target.hasAttribute('srcicon') && target.getAttribute('srcicon').length) {
         target.setAttribute('srcgif', target.getAttribute('src'))
         target.setAttribute('src', target.getAttribute('srcicon'))
     }
 }
-if (!isTablet) {
-    projectContainer.addEventListener('mouseover', function(ev) {
-        const item = ev.target.closest('.projectItem')
-        if (item != null) {
-            iconToGif(item)
-        }
-    })
-
-    projectContainer.addEventListener('mouseout', function(ev) {
-        const item = ev.target.closest('.projectItem')
-        if (item != null) {
-            gifToIcon(item)
-        }
-    })
-}
-
-// scrollShow track items
-scrollShow.addItems()
