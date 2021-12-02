@@ -8,95 +8,42 @@
     <title>Franco Chan | Software Dev</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reveal.css">
 </head>
 <body>
-    <div id="header">
+    <div id="header" class="scrollShow">
         <div id="header__photo"></div>
         <div id="header__name">Franco<br>Chan<strong>.co</strong></div>
     </div>
 
-    <div id="themeToggle">Light Mode</div>
+    <div id="themeToggle" class="scrollShow">Light Mode</div>
 
     <div id="intro">
-        <div id="intro__word">
+        <div id="intro__word" class="scrollShow">
             👋<br> 
             I'm a software developer, <br>
             based in Manchester.
         </div>
 
-        <a href="CV_Franco_Chan.pdf" target="_blank" class="roundButton" id="viewCV">
+        <a href="CV_Franco_Chan.pdf" target="_blank" class="roundButton scrollShow" id="viewCV">
             <i class="arrow right"></i> 
             <span class="roundButton__word">View CV</span>
         </a>
     </div>
 
-    <div class="scrollList">
-        <div class="scrollList__title">Personal Projects</div>
-        <div class="arrow left scrollList__Arrow" id="scrollList__leftArrow"></div>
-        <div class="arrow right scrollList__Arrow" id="scrollList__rightArrow"></div>
-
-        <div class="scrollList__itemGroup">
-
-            <a href="https://francochan.co/BoxRoom/" target="_blank"><div class="scrollList__item">
-                <img src="img/boxRoom_icon.png"  alt="" class="scrollList__item__icon" srchover="img/BoxRoom_30fps.gif">
-                <div class="scrollList__item__word">Box-like Room Modelling</div>
-            </div></a>
-
-            <a href="https://francochan.co/zombieInteractive/" target="_blank"><div class="scrollList__item">
-                <img src="img/zombieInteractive.svg"  alt="" class="scrollList__item__icon" srchover="img/zombieInteractive.gif">
-                <div class="scrollList__item__word">Zombie Apocalypse Simulation</div>
-            </div></a>
-
-            <a href="https://francochan.co/game_of_life/" target="_blank"><div class="scrollList__item">
-                <img src="img/gameOfLife.svg"  alt="" class="scrollList__item__icon" srchover="img/gameOfLife.gif">
-                <div class="scrollList__item__word">Game of Life Simulation</div>
-            </div></a>
-
-            <a href="https://francochan.co/trafficWave/" target="_blank"><div class="scrollList__item">
-                <img src="img/trafficWave.svg"  alt="" class="scrollList__item__icon" srchover="img/trafficWave.gif">
-                <div class="scrollList__item__word">Traffic Wave Simulation</div>
-            </div></a>
-
-            <a href="https://francochan.co/results_visualise/" target="_blank"><div class="scrollList__item">
-                <img src="img/results_visualise.svg"  alt="" class="scrollList__item__icon" srchover="img/results_visualise.gif">
-                <div class="scrollList__item__word">Exam Results Visualisation</div>
-            </div></a>
-
-            <a href="https://francochan.co/mathPDF/" target="_blank"><div class="scrollList__item">
-                <img src="img/mathPDF.svg"  alt="" class="scrollList__item__icon">
-                <div class="scrollList__item__word">Maths Questions Generator</div>
-            </div></a>
-
-            <a href="https://francochan.co/clockOrientation/" target="_blank"><div class="scrollList__item">
-                <img src="img/clockOrientation.svg"  alt="" class="scrollList__item__icon" srchover="img/clockOrientation.gif">
-                <div class="scrollList__item__word">Clock Orientation</div>
-            </div></a>
-
-            <a href="https://francochan.co/listCalc/" target="_blank"><div class="scrollList__item">
-                <img src="img/listCalc.svg"  alt="" class="scrollList__item__icon">
-                <div class="scrollList__item__word">List-based Calculator</div>
-            </div></a>
-
-            <a href="https://github.com/iamfranco/code_ref" target="_blank"><div class="scrollList__item">
-                <img src="img/code_ref.svg"  alt="" class="scrollList__item__icon">
-                <div class="scrollList__item__word">Code Reference</div>
-            </div></a>
-
-            <a href="https://github.com/iamfranco/formulaBooklet/blob/master/formula.pdf" target="_blank"><div class="scrollList__item">
-                <img src="img/formulaBooklet.svg"  alt="" class="scrollList__item__icon">
-                <div class="scrollList__item__word">Formula Booklet</div>
-            </div></a>
-
+    <div class="container">
+        <div class="projectTopBar scrollShow">
+            <div id="projectFilters"><div id="filterShowAll" class="filterTag active">Show All Projects</div></div>
+            <div id="projectShowCodeBtn">GitHub Code</div>
         </div>
+        <div id="projectContainer" class="scrollShow" data-scroll-show-element-percent="0"></div>
     </div>
 
     <div id="socials">
-        <div id="socials__title">
+        <div id="socials__title" class="scrollShow">
             More of me, on
         </div>
 
-        <div id="socials__iconGroup">
+        <div id="socials__iconGroup" class="scrollShow">
             <a href="https://www.linkedin.com/in/kffchan/"                     target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/linkedin.svg"  alt="" class="icon"><br><span class="icon__word">LinkedIn </span></div></a>
             <a href="https://github.com/iamfranco"                             target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/github.svg"    alt="" class="icon"><br><span class="icon__word">GitHub   </span></div></a>
             <a href="https://codepen.io/iamfranco/"                            target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/codepen.svg"   alt="" class="icon"><br><span class="icon__word">CodePen  </span></div></a>
@@ -106,12 +53,16 @@
             <!-- <a href="https://www.twitch.tv/francochanco"                       target="_blank" class="icon-href__reveal"><div class="icon-href"><img src="img/twitch.svg"    alt="" class="icon"><br><span class="icon__word">Twitch   </span></div></a> -->
         </div>
 
-        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'N4N375X7M');kofiwidget2.draw();</script> 
+        <div class="scrollShow">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'N4N375X7M');kofiwidget2.draw();</script> 
+        </div>
     </div>
 
-    <footer>
+    <footer class="scrollShow">
         <span id="year">2020</span> FRANCOCHAN.CO
     </footer>
 </body>
+<script src="scrollShow.js"></script>
+<script src="projects.js"></script>
 <script src="main.js"></script>
 </html>

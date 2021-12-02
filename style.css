@@ -6,14 +6,52 @@ body {
 }
 
 body.dark {
-    background: rgb(12, 12, 12);
+    background-color: rgb(12, 12, 12);
     color: #fff;
 }
 
-::selection      { background: rgba(255, 88, 88, 0.2); /* WebKit/Blink Browsers */ }
-::-moz-selection { background: rgba(255, 88, 88, 0.2); /* Gecko Browsers */ }
-body.dark ::selection      { background: rgba(255, 255, 255, 0.2); /* WebKit/Blink Browsers */ }
-body.dark ::-moz-selection { background: rgba(255, 255, 255, 0.2); /* Gecko Browsers */ }
+:root {
+    /* --color-hl: #FF577F; */
+    --color-hl: rgb(9, 108, 255);
+    --color-hl-dark: rgb(255, 168, 97);
+    --color-tag-bg: #cacaca2f;
+}
+
+::selection      { background-color: rgba(88, 208, 255, 0.2); /* WebKit/Blink Browsers */ }
+::-moz-selection { background-color: rgba(88, 208, 255, 0.2); /* Gecko Browsers */ }
+body.dark ::selection      { background-color: rgba(255, 255, 255, 0.2); /* WebKit/Blink Browsers */ }
+body.dark ::-moz-selection { background-color: rgba(255, 255, 255, 0.2); /* Gecko Browsers */ }
+
+.scrollShow {
+    opacity: 0;
+    transition: 0.5s ease all;
+    transform: translateY(-10px);
+}
+
+.scrollShow.show {
+    opacity: 1;
+    transform: none;
+}
+
+#themeToggle.scrollShow {
+    transform: translateX(50px);
+    transition-property: transform,opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+#themeToggle.scrollShow.show {
+    transform: none;
+}
+
+#viewCV.scrollShow {
+    transform: translateX(-10px);
+    transition-property: transform,opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+#viewCV.scrollShow.show {
+    transform: none;
+}
 
 #header {
     margin-top: 32px;
@@ -71,126 +109,179 @@ body.dark ::-moz-selection { background: rgba(255, 255, 255, 0.2); /* Gecko Brow
     }
 }
 
-.scrollList {
-    position: relative;
-    text-align: center;
-    margin-bottom: 48px;
-    /* background-color: rgb(255, 249, 236); */
-    background-color: rgb(255, 235, 193);
-    overflow-y: hidden;
-}
-.dark .scrollList {
-    background-color: rgb(31, 34, 36);
-}
-
-.scrollList__title {
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 0, 0, 0.7);
-    position: relative;
-    padding: 10px 20px;
-    border-radius: 0 0 15px 15px;
-}
-.dark .scrollList__title {
-    background-color: rgba(164, 214, 255, 0.1);
-}
-
-.scrollList__Arrow {
-    position: absolute;
-    top: 17px;
-    padding: 6px !important;
-    cursor: pointer;
-    border-width: 0 4px 4px 0 !important;
-    border-color: rgba(0, 0, 0, 0.7) !important;
-}
-.dark .scrollList__Arrow {
-    border-color: rgba(255, 255, 255, 0.7) !important;
-}
-.scrollList__Arrow.ArrowDisabled {
-    opacity: 0.3;
-    cursor: default;
-}
-#scrollList__leftArrow {
-    left: 15px;
-}
-#scrollList__rightArrow {
-    right: 15px;
-}
-
-.scrollList__itemGroup {
-    padding: 20px 10px;
-    overflow: auto;
-    white-space: nowrap;
-    cursor: grab;
-}
-.scrollList__itemGroup:active {
-    cursor: grabbing;
-}
-@media (min-width: 800px) {
-    .scrollList__itemGroup {
-        padding: 40px 20px;
-    }
-}
-
-/* if dragging, then prevent anchor click */
-.dragstart a {
-    pointer-events: none;
-} 
 a {
     text-decoration: none;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollList__itemGroup::-webkit-scrollbar {
-    display: none;
+
+.container {
+    max-width: 1330px;
+    margin: 50px auto;
+    position: relative;
+    font-size: 16px;
+    padding: 0 10px;
+}
+@media (max-width: 1380px) {.container { max-width: 1060px;}}
+@media (max-width: 1110px) {.container { max-width: 790px;}}
+
+.projectTopBar {
+    display: grid; 
+    grid-template-columns: 1fr 115px;
+    margin-bottom: 5px;
+}
+@media (max-width: 900px) {
+    .projectTopBar {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollList__itemGroup {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+#filterShowAll {
+    padding: 5px 10px 5px 8px;
+    border-left: 2px solid var(--color-hl);
+}
+body.dark #filterShowAll {
+    border-left-color: var(--color-hl-dark);
 }
 
-.scrollList__item {
+.filterTag {
     display: inline-block;
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 150px;
-    white-space:normal;
-    font-size: 15px;
-    vertical-align: top;
+    background-color: var(--color-tag-bg);
+    color: #555;
+    padding: 5px;
+    padding-left: 8px;
+    cursor: pointer;
+    margin-right: 4px;
+    margin-bottom: 4px;
 }
-
-.scrollList__item__icon {
-    height: 100px;
-    border-radius: 5px;
-    transition: 0.15s ease all;
-}
-
-@media (min-width: 800px) {
-    .scrollList__item {
-        width: 240px;
-        font-size: 16px;
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-
-    .scrollList__item__icon {
-        height: 160px;
-    }
-}
-
-.scrollList__item:hover .scrollList__item__icon {
-    transform: translateY(-8px);
-}
-
-.scrollList__item__word {
-    color: #000;
-    text-align: center;
-}
-.dark .scrollList__item__word {
+body.dark .filterTag {
     color: #fff;
 }
+
+.filterTag.active {
+    background-color: var(--color-hl) !important;
+    color: #fff;
+}
+body.dark .filterTag.active {
+    background-color: var(--color-hl-dark) !important;
+}
+
+#projectShowCodeBtn {
+    padding: 5px 10px 5px 8px;
+    border-left: 2px solid var(--color-hl);
+    max-width: 95px;
+    background-color: var(--color-tag-bg);
+    color: #555;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+body.dark #projectShowCodeBtn {
+    color: #fff;
+    border-left-color: var(--color-hl-dark);
+}
+#projectShowCodeBtn.active {
+    background-color: var(--color-hl);
+    color: #fff;
+}
+body.dark #projectShowCodeBtn.active {
+    background-color: var(--color-hl-dark);
+}
+
+#projectContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 20px;
+}
+
+.projectItem * {
+    pointer-events: none;
+}
+
+.projectThumbnail {
+    width: 250px;
+    height: 166px;
+    vertical-align: bottom;
+}
+
+.projectName {
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+body.dark .projectName {
+    color: #fff;
+}
+
+.projectItem:hover .projectName {
+    color: var(--color-hl);
+}
+body.dark .projectItem:hover .projectName {
+    color: var(--color-hl-dark);
+}
+
+.projectTag {
+    background-color: var(--color-tag-bg);
+    color: #555;
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: 12px;
+    margin-right: 3px;
+    margin-top: 2px;
+}
+body.dark .projectTag {
+    color: #fff;
+}
+
+.projectTag.active {
+    background-color: var(--color-hl);
+    color: #fff;
+}
+body.dark .projectTag.active {
+    background-color: var(--color-hl-dark);
+}
+
+@media (max-width: 900px) {
+    .projectItem {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 10px;
+    }
+    #projectContainer {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+    }
+    .projectThumbnail {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+.projectThumbnailContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.githubLinkStamp {
+    position: absolute;
+    padding: 7px; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    color: #fff; 
+    background-color: #222; 
+    text-align: center;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.2s ease all;
+    transform: translateY(30px);
+}
+
+.githubLinkStamp.active {
+    opacity: 0.7;
+    transform: none;
+}
+
 
 
 #socials {
@@ -262,22 +353,22 @@ footer {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 26px;
-    border: 2px solid rgb(9, 108, 255);
-    color: rgb(9, 108, 255);
-    transition: 0.1s all ease;
+    border: 2px solid var(--color-hl);
+    color: var(--color-hl);
+    transition: 0.1s ease all;
     font-weight: bold;
 }
 .dark .roundButton {
-    border: 2px solid rgb(255, 168, 97);
+    border: 2px solid var(--color-hl-dark);
     color: rgb(255, 255, 255);
 }
 
 .roundButton:hover {
-    background-color: rgb(9, 108, 255);
+    background-color: var(--color-hl);
     color: #fff;
 }
 .dark .roundButton:hover {
-    background-color: rgb(255, 168, 97);
+    background-color: var(--color-hl-dark);
     color: #000;
 }
 
@@ -288,7 +379,7 @@ footer {
 }
 
 .arrow {
-    border: solid rgb(9, 108, 255);
+    border: solid var(--color-hl);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
