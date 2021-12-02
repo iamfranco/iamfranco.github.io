@@ -17,6 +17,13 @@ body.dark {
     --color-tag-bg: #cacaca2f;
 }
 
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
 ::selection      { background-color: rgba(88, 208, 255, 0.2); /* WebKit/Blink Browsers */ }
 ::-moz-selection { background-color: rgba(88, 208, 255, 0.2); /* Gecko Browsers */ }
 body.dark ::selection      { background-color: rgba(255, 255, 255, 0.2); /* WebKit/Blink Browsers */ }

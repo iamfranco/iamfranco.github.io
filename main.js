@@ -1,5 +1,8 @@
 // update emojis
-twemoji.parse(document.body);
+twemoji.parse(document.body, {
+    folder: 'svg',
+    ext: '.svg'
+})
 
 // set year
 $('#year').innerHTML = new Date().getFullYear()
