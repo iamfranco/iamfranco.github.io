@@ -2,7 +2,7 @@ let projects = [
     {
         name: 'FrancoChan.co (this website)',
         thumbnail_img: 'img/francochanco.svg',
-        thumbnail_gif: '',
+        thumbnail_gif: 'img/francochanco.gif',
         link: '',
         link_code: 'https://github.com/iamfranco/iamfranco.github.io',
         tags: ['JavaScript', 'HTML', 'CSS'],
@@ -66,7 +66,7 @@ let projects = [
     {
         name: 'Maths Questions Generator',
         thumbnail_img: 'img/mathPDF.svg',
-        thumbnail_gif: '',
+        thumbnail_gif: 'img/mathPDF.gif',
         link: 'https://francochan.co/mathPDF/',
         link_code: 'https://github.com/iamfranco/mathPDF',
         tags: ['JsPDF', 'JavaScript', 'HTML', 'CSS'],
