@@ -299,6 +299,10 @@ body.dark .projectTag.active {
     margin-bottom: 24px;
 }
 
+#socials__iconGroup {
+    margin-bottom: 30px;
+}
+
 .icon {
     height: 40px;
 }
@@ -322,12 +326,16 @@ body.dark .projectTag.active {
 }
 
 .icon-href:hover {
-    background-color: rgba(0,0,0,0.05);
-    color: rgba(0,0,0,1);
+    background-color: var(--color-hl);
+    color: #fff;
+}
+.icon-href:hover .icon {
+    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+            filter: invert(100%);
 }
 .dark .icon-href:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,1);
+    background-color: var(--color-hl-dark);
+    color: #fff;
 }
 
 .icon-href:hover .icon {
