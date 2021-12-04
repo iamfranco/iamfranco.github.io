@@ -5,11 +5,11 @@ twemoji.parse(document.body, {
 })
 
 // set year
-$('#year').innerHTML = new Date().getFullYear()
+document.getElementById('year').innerHTML = new Date().getFullYear()
 
 // toggle theme
-const themeToggler = $('#themeToggle')
-const body = $('body')
+const themeToggler = document.getElementById('themeToggle')
+const body = document.body
 let isDark = false
 let localStorageIsDark = eval(localStorage.getItem('isDarkTheme'))
 if (localStorageIsDark !== null) isDark = localStorageIsDark
@@ -49,17 +49,13 @@ const projectFilters = document.getElementById('projectFilters')
 const projectContainer = document.getElementById('projectContainer')
 const showCodeBtn = document.getElementById('projectShowCodeBtn')
 populateFiltersDOM(projects)
-populateProjectItemsDOM(projects, {firstCall: true})
+populateProjectItemsDOM(projects)
 
 projectFilters.addEventListener('click', function(ev) {
     if (ev.target.classList.contains('filterTag')) {
         const tag = ev.target.getAttribute('tag')
-        updateFiltersActiveTag(tag) 
-        if (ev.target.id == 'filterShowAll') { // show all
-            populateProjectItemsDOM(projects)
-        } else { // apply tag filtering
-            populateProjectItemsDOM(projects, {filterTag: tag})
-        }
+        updateFiltersActiveTag(tag)
+        filterProjectItemsDOMByTag(tag)
     }
 })
 
@@ -89,9 +85,7 @@ if (!isTablet) {
 // scrollShow track items
 scrollShow.addItems()
 
-
-function $(x) {return document.querySelector(x)}
-
+// get an array of the union of all the tags
 function getAllTags(projects) {
     let tags = []
     projects.forEach(item => {
@@ -103,6 +97,7 @@ function getAllTags(projects) {
     return tags
 }
 
+// initial population of tag filtering buttons 
 function populateFiltersDOM(projects) {
     const tags = getAllTags(projects)
     tags.forEach(tag => {
@@ -114,6 +109,7 @@ function populateFiltersDOM(projects) {
     })
 }
 
+// highlight the selected tag filtering button
 function updateFiltersActiveTag(tag) {
     projectFilters.getElementsByClassName('active')[0].classList.remove('active')
     if (tag == null) { // show all
@@ -129,30 +125,17 @@ function updateFiltersActiveTag(tag) {
     }
 }
 
-function populateProjectItemsDOM(projects, options={}) {
-    const filterTag = options.filterTag || null
-    const firstCall = options.firstCall || false
-    let projectsFiltered = projects
-    if (filterTag != null) {
-        projectsFiltered = projects.filter(function(item) {
-            return item.tags.includes(filterTag)
-        })
-    }
-    const scrollShowClass = firstCall ? 'scrollShow' : ''
-    const scrollShowAttr = firstCall ? 'data-scroll-show-element-percent="0"' : ''
+// initial population of project items DOM
+function populateProjectItemsDOM(projects) {
     projectContainer.innerHTML = ''
-    for (let i = 0; i < projectsFiltered.length; i++) {
-        const item = projectsFiltered[i]
-        let tagDOM = ''
-        item.tags.forEach(tag => {
-            if (tag==filterTag) tagDOM = `${tagDOM}<div class="projectTag active">${tag}</div>`
-            else tagDOM = `${tagDOM}<div class="projectTag" tag=${tag}>${tag}</div>`
-        })
+    for (let i = 0; i < projects.length; i++) {
+        const item = projects[i]
+        const tagDOM = item.tags.map(tag => `<div class="projectTag" tag=${tag}>${tag}</div>`).join('')
         projectContainer.insertAdjacentHTML('beforeend',
             `
             <a href="" target="_blank" 
-                class="projectLink ${scrollShowClass}" 
-                ${scrollShowAttr}
+                class="projectLink scrollShow" 
+                data-scroll-show-element-percent="0"
                 hrefdemo="${item.link}" 
                 hrefcode="${item.link_code}">
                 <div class="projectItem">
@@ -176,6 +159,30 @@ function populateProjectItemsDOM(projects, options={}) {
     scrollShow.onResize()
 }
 
+// filter-out (hide) project items DOM if they don't have the selected tag
+function filterProjectItemsDOMByTag(tag) {
+    const projectItems = projectContainer.getElementsByClassName('projectLink')
+    const hasMatchingTag = projects.map(p => tag==null ? true : p.tags.includes(tag))
+    for (let i = 0; i < projectItems.length; i++) {
+        const item = projectItems[i];
+        if (hasMatchingTag[i]) {
+            item.style.display = null
+        } else {
+            item.style.display = 'none'
+        }
+    }
+    const projectTags = projectContainer.getElementsByClassName('projectTag')
+    for (let i = 0; i < projectTags.length; i++) {
+        const projectTag = projectTags[i]
+        if (projectTag.getAttribute('tag') == tag) {
+            projectTag.classList.add('active')
+        } else {
+            projectTag.classList.remove('active')
+        }
+    }
+}
+
+// "change" project items links between "Demo link" and "GitHub code link"
 function updateProjectLinks() {
     const projectLink = projectContainer.getElementsByClassName('projectLink')
     const gitHubLinkStamp = projectContainer.getElementsByClassName('githubLinkStamp')
