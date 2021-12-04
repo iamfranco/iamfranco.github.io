@@ -156,7 +156,6 @@ function populateProjectItemsDOM(projects) {
         )
     }
     updateProjectLinks()
-    scrollShow.onResize()
 }
 
 // filter-out (hide) project items DOM if they don't have the selected tag
@@ -180,6 +179,7 @@ function filterProjectItemsDOMByTag(tag) {
             projectTag.classList.remove('active')
         }
     }
+    scrollShow.onResize()
 }
 
 // "change" project items links between "Demo link" and "GitHub code link"
