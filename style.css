@@ -175,7 +175,7 @@ body.dark .filterTag.active {
 #projectShowCodeBtn {
     padding: 5px 10px 5px 8px;
     border-left: 2px solid var(--color-hl);
-    max-width: 95px;
+    max-width: 100px;
     background-color: var(--color-tag-bg);
     color: #555;
     margin-bottom: 4px;
