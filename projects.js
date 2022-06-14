@@ -1,5 +1,13 @@
 let projects = [
   {
+    name: "Mars Rover Challenge",
+    thumbnail_img: "img/marsRover.png",
+    thumbnail_gif: "img/marsRover.gif",
+    link: "",
+    link_code: "https://github.com/iamfranco/MarsRoverChallenge",
+    tags: ["C#"]
+  },
+  {
     name: "Simple Login (One server)",
     thumbnail_img: "img/simpleLoginOne.png",
     thumbnail_gif: "img/simpleLoginOne.gif",
