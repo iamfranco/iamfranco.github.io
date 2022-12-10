@@ -11,7 +11,7 @@ let projects = [
     name: "Simple Login (One server)",
     thumbnail_img: "img/simpleLoginOne.png",
     thumbnail_gif: "img/simpleLoginOne.gif",
-    link: "https://francochanco-simple-login-one.herokuapp.com",
+    link: "https://lapel-ray.cyclic.app/",
     link_code: "https://github.com/iamfranco/simple-login-one-server",
     tags: ["MongoDB", "Express", "React", "Node"]
   },
