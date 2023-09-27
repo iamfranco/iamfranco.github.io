@@ -1,5 +1,13 @@
 let projects = [
   {
+    name: "Polygon Boolean",
+    thumbnail_img: "img/polygon-boolean.png",
+    thumbnail_gif: "img/polygon-boolean.gif",
+    link: "https://francochan.co/polygon-boolean",
+    link_code: "https://github.com/iamfranco/polygon-boolean",
+    tags: ["React", "TypeScript", "HTML", "CSS"]
+  },
+  {
     name: "Data fetching and visualisation tool for ONCRA (an organisation for carbon removal accounting)",
     thumbnail_img: "img/oncra_agc_data_tool.png",
     thumbnail_gif: "img/oncra_agc_data_tool.gif",
