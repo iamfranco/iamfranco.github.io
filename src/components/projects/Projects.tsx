@@ -1,4 +1,6 @@
+import './Projects.css'
 import { Project } from '../../models/Project'
+import ProjectCard from '../project-card/ProjectCard'
 
 interface Props {
   projects: Project[]
@@ -6,13 +8,15 @@ interface Props {
 
 const Projects = ({projects} : Props) => {
   const projectsCards = projects.map(project =>
-    <div>{project.name}</div>
+    <ProjectCard project={project} />
   )
 
   return (
-    <>
-      {projectsCards}
-    </>
+    <div className='projectSection'>
+      <div className='projectCardContainer'>
+        {projectsCards}
+      </div>
+    </div>
   )
 }
 
