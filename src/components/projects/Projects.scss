@@ -1,0 +1,51 @@
+@use '../../styles/breakpoint.scss';
+@use '../project-card/ProjectCard.scss';
+
+.project-section {
+  @media (min-width: breakpoint.$tablet) {
+    background-color: #f0f2f4;
+  }
+}
+
+.project-card-container {
+  margin: 0 auto;
+  padding-top: 50px;
+
+  @media (min-width: breakpoint.$tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: ProjectCard.$card-gap-tablet;
+    width: calc(ProjectCard.$card-gap-tablet*2 + 
+      (ProjectCard.$card-width-tablet + ProjectCard.$card-padding-tablet*2)*3);
+  }
+
+  @media (min-width: calc(ProjectCard.$card-gap-tablet*3 + 
+      (ProjectCard.$card-width-tablet + ProjectCard.$card-padding-tablet*2)*4 + 
+      ProjectCard.$card-width-tablet/2)) {
+    width: calc(ProjectCard.$card-gap-tablet*3 + 
+      (ProjectCard.$card-width-tablet + ProjectCard.$card-padding-tablet*2)*4);
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    gap: ProjectCard.$card-gap-desktop;
+    width: calc(ProjectCard.$card-gap-desktop*2 + 
+      (ProjectCard.$card-width-desktop + ProjectCard.$card-padding-desktop*2)*3);
+  }
+
+  @media (min-width: calc(ProjectCard.$card-gap-desktop*3 + 
+      (ProjectCard.$card-width-desktop + ProjectCard.$card-padding-desktop*2)*4 +
+      ProjectCard.$card-width-desktop/2)) {
+    gap: ProjectCard.$card-gap-desktop;
+    width: calc(ProjectCard.$card-gap-desktop*3 + 
+      (ProjectCard.$card-width-desktop + ProjectCard.$card-padding-desktop*2)*4);
+  }
+}
+
+// @media (max-width: 1500px) {
+//   .project-card-container {
+//     max-width: 1050px;
+//   }
+// }
+

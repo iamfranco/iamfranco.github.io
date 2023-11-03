@@ -1,11 +1,14 @@
-import './App.css'
+import './App.scss'
 import { ProjectList } from './ProjectList'
+import Contact from './components/contact/Contact'
+import Intro from './components/intro/Intro'
 import Projects from './components/projects/Projects'
 
 function App() {
   return (
     <>
-      <h1>Franco<br />Chan<strong>.co</strong></h1>
+      <Intro />
+      <Contact />
       <Projects projects={ProjectList} />
     </>
   )

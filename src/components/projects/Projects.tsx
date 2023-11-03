@@ -1,4 +1,4 @@
-import './Projects.css'
+import './Projects.scss'
 import { Project } from '../../models/Project'
 import ProjectCard from '../project-card/ProjectCard'
 
@@ -12,8 +12,8 @@ const Projects = ({projects} : Props) => {
   )
 
   return (
-    <div className='projectSection'>
-      <div className='projectCardContainer'>
+    <div className='project-section'>
+      <div className='project-card-container'>
         {projectsCards}
       </div>
     </div>

@@ -1,0 +1,97 @@
+@use '../../styles/breakpoint.scss';
+
+$card-gap-tablet: 10px;
+$card-gap-desktop: 30px;
+$card-width-tablet: 200px;
+$card-width-desktop: 300px;
+$card-padding-tablet: 5px;
+$card-padding-desktop: 10px;
+
+.project-card {
+  display: flex;
+  margin: 0 10px;
+  margin-bottom: 10px;
+  
+  @media (min-width: breakpoint.$tablet) {
+    display: inline-block;
+    width: $card-width-tablet;
+    padding: $card-padding-tablet;
+    border-radius: 14px;
+    background-color: #fff;
+    vertical-align: top;
+    margin: 0;
+  }
+  
+  @media (min-width: breakpoint.$desktop) {
+    border-radius: 26px;
+    width: $card-width-desktop;
+    padding: $card-padding-desktop;
+  }
+}
+
+.project-card img {
+  display: inline-block;
+  width: 150px;
+  margin-right: 10px;
+
+  @media (min-width: breakpoint.$tablet) {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    border-radius: 18px;
+  }
+}
+
+.project-words {
+  display: inline-block;
+
+  @media (min-width: breakpoint.$tablet) {
+    display: block;
+    vertical-align: top;
+  }
+}
+
+.project-card .title {
+  font-size: 20px;
+  font-weight: bold;
+
+  @media (min-width: breakpoint.$desktop) {
+    font-size: 24px;
+  }
+}
+
+.project-card .description {
+  font-size: 14px;
+  display: none;
+
+  @media (min-width: breakpoint.$tablet) {
+    display: block;
+  }
+}
+
+.project-card .button-container {
+  // background-color: red;
+  display: flex;
+  gap: 10px;
+}
+
+.project-card .button {
+  background-color: #ffd977;
+  padding: 3px 10px;
+  font-size: 14px;
+  border-radius: 18px;
+  font-weight: 600;
+  text-align: center;
+
+  @media (min-width: breakpoint.$tablet) {
+    flex-grow: 1;
+  }
+  
+  @media (min-width: breakpoint.$desktop) {
+    font-size: 20px;
+  }
+}
