@@ -1,0 +1,93 @@
+@use '../../styles/breakpoint.scss';
+
+#intro-container {
+  text-align: center;
+  margin: 50px 0;
+
+  @media (min-width: breakpoint.$tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#portrait {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  
+  @media (min-width: breakpoint.$tablet) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+#intro-words {
+  display: block;
+  text-align: center;
+  
+  @media (min-width: breakpoint.$tablet) {
+    display: inline-block;
+    text-align: left;
+    margin-left: 50px;
+    vertical-align: top;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    margin-left: 100px;
+  }
+}
+
+#intro-heading {
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 0;
+
+  @media (min-width: breakpoint.$tablet) {
+    font-size: 48px;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    font-size: 64px;
+  }
+}
+
+#intro-description {
+  font-size: 16px;
+  line-height: 1.7em;
+  margin: 0;
+  
+  @media (min-width: breakpoint.$tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    font-size: 36px;
+  }
+}
+
+.blue {
+  background: linear-gradient(45deg, #4EB4FF, #4E8AFF);
+}
+
+.red {
+  background: linear-gradient(45deg, #FF7714, #FF1E1E);
+}
+
+
+.gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.underline {
+  border-bottom: 3px solid black;
+}

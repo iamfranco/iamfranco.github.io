@@ -1,92 +1,70 @@
 import { Project } from "./models/Project";
+import polygonBooleanImg from "./assets/project-thumbnails/polygon-boolean.png";
+import polygonBooleanGif from "./assets/project-thumbnails/polygon-boolean.gif";
+import oncraDataToolImg from "./assets/project-thumbnails/oncra_agc_data_tool.png";
+import oncraDataToolGif from "./assets/project-thumbnails/oncra_agc_data_tool.gif";
+import marsRoverImg from "./assets/project-thumbnails/marsRover.png";
+import marsRoverGif from "./assets/project-thumbnails/marsRover.gif";
+import rawTalkImg from "./assets/project-thumbnails/rawTalk.svg";
+import rawTalkGif from "./assets/project-thumbnails/rawTalk.gif";
+import boxRoomImg from "./assets/project-thumbnails/boxRoom.png";
+import boxRoomGif from "./assets/project-thumbnails/boxRoom.gif";
+import zombieImg from "./assets/project-thumbnails/zombieInteractive.svg";
+import zombieGif from "./assets/project-thumbnails/zombieInteractive.gif";
 
 export const ProjectList: Project[] = [
   {
     name: "Polygon Boolean",
-    thumbnail_img: "img/polygon-boolean.png",
-    thumbnail_gif: "img/polygon-boolean.gif",
+    thumbnail_img: polygonBooleanImg,
+    thumbnail_gif: polygonBooleanGif,
     demo_link: "https://francochan.co/polygon-boolean",
     code_link: "https://github.com/iamfranco/polygon-boolean",
+    description: "Interactive visualisation of polygon intersections computation",
     tags: ["React", "TypeScript"]
   },
   {
-    name: "Data fetching and visualisation tool for ONCRA (an organisation for carbon removal accounting)",
-    thumbnail_img: "img/oncra_agc_data_tool.png",
-    thumbnail_gif: "img/oncra_agc_data_tool.gif",
+    name: "ONCRA Data Tool",
+    thumbnail_img: oncraDataToolImg,
+    thumbnail_gif: oncraDataToolGif,
     demo_link: "https://oncra.github.io/",
     code_link: "https://github.com/oncra/oncra.github.io",
+    description: "Data fetching and visualisation web app for <strong>ONCRA</strong> (a non-profit organisation for carbon removal accounting)",
     tags: ["React", "TypeScript"]
   },
   {
     name: "Mars Rover Challenge",
-    thumbnail_img: "img/marsRover.png",
-    thumbnail_gif: "img/marsRover.gif",
+    thumbnail_img: marsRoverImg,
+    thumbnail_gif: marsRoverGif,
     demo_link: "",
     code_link: "https://github.com/iamfranco/MarsRoverChallenge",
+    description: "C# solution to the Mars Rover Kata",
     tags: ["C#"]
   },
   {
-    name: "Simple Login (One server)",
-    thumbnail_img: "img/simpleLoginOne.png",
-    thumbnail_gif: "img/simpleLoginOne.gif",
-    demo_link: "https://lapel-ray.cyclic.app/",
-    code_link: "https://github.com/iamfranco/simple-login-one-server",
-    tags: ["MongoDB", "React"]
-  },
-  {
-    name: "FrancoChan.co (this website)",
-    thumbnail_img: "img/francochanco.svg",
-    thumbnail_gif: "img/francochanco.gif",
-    demo_link: "",
-    code_link: "https://github.com/iamfranco/iamfranco.github.io",
-    tags: ["JavaScript"]
-  },
-  {
-    name: "scrollShow JS Library",
-    thumbnail_img: "img/scrollShow.svg",
-    thumbnail_gif: "img/scrollShow.gif",
-    demo_link: "https://francochan.co/scrollShow/",
-    code_link: "https://github.com/iamfranco/scrollShow",
-    tags: ["JavaScript"]
-  },
-  {
-    name: "Main website for Raw Talk (an organisation for open discussions on mental health, social and spiritual issues)",
-    thumbnail_img: "img/rawTalk.svg",
-    thumbnail_gif: "img/rawTalk.gif",
+    name: "Raw Talk Main Website",
+    thumbnail_img: rawTalkImg,
+    thumbnail_gif: rawTalkGif,
     demo_link: "https://rawistalk.org/",
     code_link: "https://github.com/RawTalk/RawTalk.github.io",
+    description: "Main website for Raw Talk (a non-profit organisation for open discussion on mental health, social and spiritial issues)",
     tags: ["JavaScript"]
   },
   {
-    name: "Box-like Room Modelling",
-    thumbnail_img: "img/boxRoom.png",
-    thumbnail_gif: "img/boxRoom.gif",
+    name: "My Room",
+    thumbnail_img: boxRoomImg,
+    thumbnail_gif: boxRoomGif,
     demo_link: "https://francochan.co/BoxRoom/",
     code_link: "https://github.com/iamfranco/BoxRoom",
+    description: "A dimensionally accurate model of my room, using <strong>Blender</strong> and <strong>React-three-fiber</strong>",
     tags: ["JavaScript"]
   },
   {
     name: "Zombie Apocalypse Simulation",
-    thumbnail_img: "img/zombieInteractive.svg",
-    thumbnail_gif: "img/zombieInteractive.gif",
+    thumbnail_img: zombieImg,
+    thumbnail_gif: zombieGif,
     demo_link: "https://francochan.co/zombieInteractive/",
     code_link: "https://github.com/iamfranco/zombieInteractive",
-    tags: ["JavaScript"]
-  },
-  {
-    name: "Game of Life Simulation",
-    thumbnail_img: "img/gameOfLife.svg",
-    thumbnail_gif: "img/gameOfLife.gif",
-    demo_link: "https://francochan.co/game_of_life/",
-    code_link: "https://github.com/iamfranco/game_of_life",
-    tags: ["JavaScript"]
-  },
-  {
-    name: "Traffic Wave Simulation",
-    thumbnail_img: "img/trafficWave.svg",
-    thumbnail_gif: "img/trafficWave.gif",
-    demo_link: "https://francochan.co/trafficWave/",
-    code_link: "https://github.com/iamfranco/trafficWave",
+    description: "An \"agent-based\" solution to the university group project: <strong>model a zombie apocalypse</strong>",
     tags: ["JavaScript"]
   }
 ]

@@ -4,6 +4,7 @@ export interface Project {
   thumbnail_gif: string,
   demo_link: string,
   code_link: string,
+  description: string,
   tags: ProjectTag[]
 }
 

@@ -1,0 +1,59 @@
+@use '../../styles/breakpoint.scss';
+
+#demo-gif-container {
+  height: 150px;
+  overflow: hidden;
+  background-image: url('../../assets/background.gif');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  margin-bottom: 30px;
+
+  @media (min-width: breakpoint.$desktop) {
+    height: 300px;
+  }
+}
+
+.contact-center-box {
+  font-size: 28px;
+  color: white;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#demo-gif-heading {
+  display: none;
+  margin-bottom: 35px;
+
+  @media (min-width: breakpoint.$desktop) {
+    display: block;
+  }
+}
+
+.icon-link {
+  font-size: 14px;
+  color: white;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 15px;
+  border-radius: 10px;
+
+  @media (min-width: breakpoint.$desktop) {
+    font-size: 16px;
+  }
+}
+
+.icon-link:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.icon-link img {
+  height: 40px;
+  filter: invert(1);
+  margin-bottom: 7px;
+
+  @media (min-width: breakpoint.$desktop) {
+    height: 60px;
+  }
+}
