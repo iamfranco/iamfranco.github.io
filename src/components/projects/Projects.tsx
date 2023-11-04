@@ -1,6 +1,6 @@
 import './Projects.scss'
 import { Project } from '../../models/Project'
-import ProjectCard from '../project-card/ProjectCard'
+import ProjectCard from './project-card/ProjectCard'
 
 interface Props {
   projects: Project[]
@@ -8,7 +8,7 @@ interface Props {
 
 const Projects = ({projects} : Props) => {
   const projectsCards = projects.map(project =>
-    <ProjectCard project={project} />
+    <ProjectCard project={project} key={project.name} />
   )
 
   return (

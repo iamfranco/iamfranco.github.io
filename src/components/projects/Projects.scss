@@ -1,5 +1,5 @@
 @use '../../styles/breakpoint.scss';
-@use '../project-card/ProjectCard.scss';
+@use './project-card/ProjectCard.scss';
 
 .project-section {
   @media (min-width: breakpoint.$tablet) {
@@ -9,7 +9,7 @@
 
 .project-card-container {
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 50px 0;
 
   @media (min-width: breakpoint.$tablet) {
     display: flex;
@@ -42,10 +42,3 @@
       (ProjectCard.$card-width-desktop + ProjectCard.$card-padding-desktop*2)*4);
   }
 }
-
-// @media (max-width: 1500px) {
-//   .project-card-container {
-//     max-width: 1050px;
-//   }
-// }
-
