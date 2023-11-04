@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Project } from '../../models/Project';
 import Projects from './Projects';
+import { ProjectTag } from '../../models/ProjectTag';
 
 const projects: Project[] = [
   {
@@ -11,7 +12,7 @@ const projects: Project[] = [
     demo_link: 'demo1.link',
     code_link: 'code1.link',
     description: "description 1",
-    tags: ['C#']
+    tags: [ProjectTag.CSharp]
   },
   {
     name: 'Project 2',
@@ -20,7 +21,7 @@ const projects: Project[] = [
     demo_link: 'demo2.link',
     code_link: 'code2.link',
     description: "description 2",
-    tags: ['TypeScript', 'React']
+    tags: [ProjectTag.TypeScript, ProjectTag.React]
   }
 ]
 

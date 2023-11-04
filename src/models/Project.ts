@@ -1,3 +1,5 @@
+import { ProjectTag } from "./ProjectTag";
+
 export interface Project {
   name: string,
   thumbnail_img: string,
@@ -7,5 +9,3 @@ export interface Project {
   description: string,
   tags: ProjectTag[]
 }
-
-export type ProjectTag = 'React' | 'TypeScript' | 'JavaScript' | 'C#' | 'MongoDB' | 'GraphQL';

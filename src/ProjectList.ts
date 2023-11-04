@@ -9,6 +9,7 @@ import rawTalkImg from "./assets/project-thumbnails/rawTalk.svg";
 import rawTalkGif from "./assets/project-thumbnails/rawTalk.gif";
 import zombieImg from "./assets/project-thumbnails/zombieInteractive.svg";
 import zombieGif from "./assets/project-thumbnails/zombieInteractive.gif";
+import { ProjectTag } from "./models/ProjectTag";
 
 export const ProjectList: Project[] = [
   {
@@ -18,7 +19,7 @@ export const ProjectList: Project[] = [
     demo_link: "https://francochan.co/polygon-boolean",
     code_link: "https://github.com/iamfranco/polygon-boolean",
     description: "Interactive visualisation of polygon intersections computation",
-    tags: ["React", "TypeScript"]
+    tags: [ProjectTag.React, ProjectTag.TypeScript]
   },
   {
     name: "ONCRA Data Tool",
@@ -27,7 +28,7 @@ export const ProjectList: Project[] = [
     demo_link: "https://oncra.github.io/",
     code_link: "https://github.com/oncra/oncra.github.io",
     description: "Data fetching and visualisation web app for <strong>ONCRA</strong> (a non-profit organisation for carbon removal accounting)",
-    tags: ["React", "TypeScript"]
+    tags: [ProjectTag.React, ProjectTag.TypeScript]
   },
   {
     name: "Mars Rover Challenge",
@@ -36,7 +37,7 @@ export const ProjectList: Project[] = [
     demo_link: "",
     code_link: "https://github.com/iamfranco/MarsRoverChallenge",
     description: "C# solution to the Mars Rover Kata",
-    tags: ["C#"]
+    tags: [ProjectTag.CSharp]
   },
   {
     name: "Raw Talk Main Website",
@@ -45,7 +46,7 @@ export const ProjectList: Project[] = [
     demo_link: "https://rawistalk.org/",
     code_link: "https://github.com/RawTalk/RawTalk.github.io",
     description: "Main website for Raw Talk (a non-profit organisation for open discussion on mental health, social and spiritial issues)",
-    tags: ["JavaScript"]
+    tags: [ProjectTag.JavaScript]
   },
   // {
   //   name: "My Room",
@@ -54,7 +55,7 @@ export const ProjectList: Project[] = [
   //   demo_link: "https://francochan.co/BoxRoom/",
   //   code_link: "https://github.com/iamfranco/BoxRoom",
   //   description: "A dimensionally accurate model of my room, using <strong>Blender</strong> and <strong>React-three-fiber</strong>",
-  //   tags: ["JavaScript"]
+  //   tags: [ProjectTag.javaScript]
   // },
   {
     name: "Zombie Apocalypse Simulation",
@@ -63,6 +64,6 @@ export const ProjectList: Project[] = [
     demo_link: "https://francochan.co/zombieInteractive/",
     code_link: "https://github.com/iamfranco/zombieInteractive",
     description: "An \"agent-based\" solution to the university group project: <strong>model a zombie apocalypse</strong>",
-    tags: ["JavaScript"]
+    tags: [ProjectTag.JavaScript]
   }
 ]
