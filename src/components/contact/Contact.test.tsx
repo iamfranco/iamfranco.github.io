@@ -38,5 +38,4 @@ describe('Contact component', () => {
       expect(linkAnchor.getAttribute('href')).toBe(contactLink.href);
     }
   })
-  
 })
