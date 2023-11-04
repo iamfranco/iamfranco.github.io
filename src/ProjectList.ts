@@ -7,8 +7,6 @@ import marsRoverImg from "./assets/project-thumbnails/marsRover.png";
 import marsRoverGif from "./assets/project-thumbnails/marsRover.gif";
 import rawTalkImg from "./assets/project-thumbnails/rawTalk.svg";
 import rawTalkGif from "./assets/project-thumbnails/rawTalk.gif";
-import boxRoomImg from "./assets/project-thumbnails/boxRoom.png";
-import boxRoomGif from "./assets/project-thumbnails/boxRoom.gif";
 import zombieImg from "./assets/project-thumbnails/zombieInteractive.svg";
 import zombieGif from "./assets/project-thumbnails/zombieInteractive.gif";
 
