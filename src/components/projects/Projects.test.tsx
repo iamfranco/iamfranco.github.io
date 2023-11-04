@@ -80,23 +80,33 @@ describe('Projects component', () => {
       }
     })
 
-    it('when React and C# filter buttons are clicked, then only projects with either React or C# tags are displayed', async () => {
-      // Arrange
-      const button1 = screen.queryAllByText(ProjectTag.React)[0];
-      const button2 = screen.queryAllByText(ProjectTag.CSharp)[0];
-      
-      // Act
-      await user.click(button1);
-      await user.click(button2);
+    it('when React button is clicked, then C# filter button is clicked, then only projects with C# tags are displayed', async () => {
+      // Act - React clicked
+      await user.click(screen.queryAllByText(ProjectTag.React)[0]);
 
-      // Assert
-      const matchingProjects = projects.filter(x => x.tags.includes(ProjectTag.React) || x.tags.includes(ProjectTag.CSharp));
-      for (const project of matchingProjects) {
+      // Assert - only React projects are displayed
+      const reactProjects = projects.filter(x => x.tags.includes(ProjectTag.React));
+      for (const project of reactProjects) {
         expect(screen.getByText(project.name)).not.toBeNull();
       }
       
-      const otherProjects = projects.filter(x => !(x.tags.includes(ProjectTag.React) || x.tags.includes(ProjectTag.CSharp)));
-      for (const project of otherProjects) {
+      const nonReactProjects = projects.filter(x => !x.tags.includes(ProjectTag.React));
+      for (const project of nonReactProjects) {
+        const projectMatch = screen.queryByText(project.name);
+        expect(projectMatch).toBeNull();
+      }
+
+      // Act - click C#
+      await user.click(screen.queryAllByText(ProjectTag.CSharp)[0]);
+
+      // Assert - only C# projects are displayed
+      const CSharpProjects = projects.filter(x => x.tags.includes(ProjectTag.CSharp));
+      for (const project of CSharpProjects) {
+        expect(screen.getByText(project.name)).not.toBeNull();
+      }
+      
+      const nonCSharpProjects = projects.filter(x => !x.tags.includes(ProjectTag.CSharp));
+      for (const project of nonCSharpProjects) {
         const projectMatch = screen.queryByText(project.name);
         expect(projectMatch).toBeNull();
       }

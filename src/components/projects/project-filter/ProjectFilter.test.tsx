@@ -9,7 +9,7 @@ const onFilterClick = vi.fn();
 describe('ProjectFilter component', () => {
   const user = userEvent.setup();
   const projectTags = Object.values(ProjectTag);
-  const initialProjectFilter = <ProjectFilter filterTags={[]} onFilterClick={onFilterClick} />;
+  const initialProjectFilter = <ProjectFilter filterTag={null} onFilterClick={onFilterClick} />;
 
   afterEach(() => {
     cleanup();
@@ -61,10 +61,10 @@ describe('ProjectFilter component', () => {
     expect(onFilterClick).toBeCalledWith(null);
   })
 
-  it('given filterTags has 1 tag, then only that tag should have active class', () => {
+  it('given a filterTag selected, then only that tag should have active class', () => {
     for (const activeTag of projectTags) {
       // Arrange Act
-      render(<ProjectFilter filterTags={[activeTag]} onFilterClick={onFilterClick} />);
+      render(<ProjectFilter filterTag={activeTag} onFilterClick={onFilterClick} />);
 
       // Assert
       const button = screen.getByText(activeTag);
@@ -81,22 +81,4 @@ describe('ProjectFilter component', () => {
       cleanup();
     }
   })
-
-  it('given filterTags have C# and React, then only C# and React should have active class', () => {
-    // Arrange Act
-    render(<ProjectFilter filterTags={[ProjectTag.CSharp, ProjectTag.React]} onFilterClick={onFilterClick} />);
-
-    // Assert
-    expect(screen.getByText(ProjectTag.CSharp).className).toContain('active');
-    expect(screen.getByText(ProjectTag.React).className).toContain('active');
-
-    const otherTags = projectTags.filter(x => x!=ProjectTag.CSharp && x!= ProjectTag.React);
-      for (const otherTag of otherTags) {
-        expect(screen.getByText(otherTag).className).not.toContain('active');
-      }
-
-    const allProjectsButton = screen.getByText('All Projects');
-    expect(allProjectsButton.className).not.toContain('active');
-  })
-
 })
