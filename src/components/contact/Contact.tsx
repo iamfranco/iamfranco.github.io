@@ -29,7 +29,7 @@ const Contact = () => {
   ]
 
   const contactLinksSection = contactLinks.map(contactLink => (
-    <a className='icon-link' href={contactLink.href} target='_blank'>
+    <a className='icon-link' href={contactLink.href} target='_blank' key={contactLink.text}>
       <img src={contactLink.img} alt={contactLink.text} />
       <div>
         {contactLink.text}
