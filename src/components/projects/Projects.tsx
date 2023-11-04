@@ -10,28 +10,24 @@ interface Props {
 }
 
 const Projects = ({projects} : Props) => {
-  const [filterTags, setFilterTags] = useState<ProjectTag[]>([]);
+  const [filterTag, setFilterTag] = useState<ProjectTag | null>(null);
 
   const onFilterClick = (tag: ProjectTag | null) => {
     if (tag == null) {
-      return setFilterTags([]);
+      return setFilterTag(null);
     };
 
-    if (filterTags.includes(tag)) {
-      return setFilterTags(currentTags => currentTags.filter(t => t != tag))
+    if (filterTag == tag) {
+      return setFilterTag(null)
     }
 
-    setFilterTags(currentTags => [...currentTags, tag]);
+    setFilterTag(tag);
   }
 
   const filteredProjects = projects.filter(project => {
-    if (filterTags.length == 0) return true;
+    if (filterTag == null) return true;
 
-    for (const tag of filterTags) {
-      if (project.tags.includes(tag)) return true
-    }
-
-    return false;
+    return project.tags.includes(filterTag);
   });
 
   const projectsCards = filteredProjects.map(project =>
@@ -40,7 +36,7 @@ const Projects = ({projects} : Props) => {
 
   return (
     <div className='project-section'>
-      <ProjectFilter filterTags={filterTags} onFilterClick={onFilterClick}/>
+      <ProjectFilter filterTag={filterTag} onFilterClick={onFilterClick}/>
       <div className='project-card-container'>
         {projectsCards}
       </div>

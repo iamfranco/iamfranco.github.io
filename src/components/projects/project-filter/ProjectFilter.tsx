@@ -3,17 +3,17 @@ import { ProjectTag } from '../../../models/ProjectTag';
 import './ProjectFilter.scss';
 
 interface Props {
-  filterTags: ProjectTag[],
+  filterTag: ProjectTag | null,
   onFilterClick: (tag: ProjectTag | null) => void
 }
 
-const ProjectFilter = ({filterTags, onFilterClick} : Props) => {
+const ProjectFilter = ({filterTag, onFilterClick} : Props) => {
   const allProjectsButton = (
     <div 
       key={`filter button all-projects`}
       className={classNames(
         'project-filter-tag', 
-        filterTags.length==0 && 'active'
+        filterTag==null && 'active'
       )}
       onClick={() => onFilterClick(null)}
     >
@@ -27,7 +27,7 @@ const ProjectFilter = ({filterTags, onFilterClick} : Props) => {
       key={`filter button ${tag}`}
       className={classNames(
         'project-filter-tag',
-        filterTags.includes(tag) && 'active'
+        filterTag==tag && 'active'
       )}
       onClick={() => onFilterClick(tag)}
     >
