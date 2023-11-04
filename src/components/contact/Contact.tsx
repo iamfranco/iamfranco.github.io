@@ -3,14 +3,14 @@ import githubIcon from './../../assets/icons/github.svg'
 import linkedinIcon from './../../assets/icons/linkedin.svg'
 import pdfIcon from './../../assets/icons/pdf.svg'
 
-interface IconLink {
+interface ContactLink {
   href: string;
   img: string;
   text: string;
 }
 
 const Contact = () => {
-  const iconLinks: IconLink[] = [
+  const contactLinks: ContactLink[] = [
     {
       href: "https://github.com/iamfranco",
       img: githubIcon,
@@ -22,17 +22,17 @@ const Contact = () => {
       text: "LinkedIn"
     },
     {
-      href: "https://github.com/iamfranco",
+      href: "cv.pdf",
       img: pdfIcon,
       text: "My CV"
     }
   ]
 
-  const iconLinksSection = iconLinks.map(iconLink => (
-    <a className='icon-link' href={iconLink.href} target='_blank'>
-      <img src={iconLink.img} alt={iconLink.text} />
+  const contactLinksSection = contactLinks.map(contactLink => (
+    <a className='icon-link' href={contactLink.href} target='_blank'>
+      <img src={contactLink.img} alt={contactLink.text} />
       <div>
-        {iconLink.text}
+        {contactLink.text}
       </div>
     </a>
   ));
@@ -44,7 +44,7 @@ const Contact = () => {
           Contact me for <strong>any reason</strong>
         </div>
         <div>
-          {iconLinksSection}
+          {contactLinksSection}
         </div>
       </div>
     </div>
