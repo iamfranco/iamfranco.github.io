@@ -49,15 +49,15 @@ export const ProjectList: Project[] = [
     description: "Main website for Raw Talk (a non-profit organisation for open discussion on mental health, social and spiritial issues)",
     tags: ["JavaScript"]
   },
-  {
-    name: "My Room",
-    thumbnail_img: boxRoomImg,
-    thumbnail_gif: boxRoomGif,
-    demo_link: "https://francochan.co/BoxRoom/",
-    code_link: "https://github.com/iamfranco/BoxRoom",
-    description: "A dimensionally accurate model of my room, using <strong>Blender</strong> and <strong>React-three-fiber</strong>",
-    tags: ["JavaScript"]
-  },
+  // {
+  //   name: "My Room",
+  //   thumbnail_img: boxRoomImg,
+  //   thumbnail_gif: boxRoomGif,
+  //   demo_link: "https://francochan.co/BoxRoom/",
+  //   code_link: "https://github.com/iamfranco/BoxRoom",
+  //   description: "A dimensionally accurate model of my room, using <strong>Blender</strong> and <strong>React-three-fiber</strong>",
+  //   tags: ["JavaScript"]
+  // },
   {
     name: "Zombie Apocalypse Simulation",
     thumbnail_img: zombieImg,
