@@ -2,6 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import ProjectCard from "./ProjectCard";
 import { Project } from "../../../models/Project";
+import { ProjectTag } from "../../../models/ProjectTag";
 
 describe('ProjectCard component', () => {
 
@@ -14,7 +15,7 @@ describe('ProjectCard component', () => {
       demo_link: 'demo1.link',
       code_link: 'code1.link',
       description: "description 1",
-      tags: ['React', 'TypeScript']
+      tags: [ProjectTag.React, ProjectTag.TypeScript]
     };
 
     beforeAll(() => {
@@ -72,7 +73,7 @@ describe('ProjectCard component', () => {
       demo_link: '',
       code_link: 'code1.link',
       description: "description 1",
-      tags: ['React', 'TypeScript']
+      tags: [ProjectTag.React, ProjectTag.TypeScript]
     };
 
     beforeAll(() => {
