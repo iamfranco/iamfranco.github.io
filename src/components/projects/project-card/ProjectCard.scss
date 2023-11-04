@@ -1,22 +1,23 @@
-@use '../../styles/breakpoint.scss';
+@use '../../../styles/breakpoint.scss';
 
 $card-gap-tablet: 10px;
 $card-gap-desktop: 30px;
 $card-width-tablet: 200px;
 $card-width-desktop: 300px;
-$card-padding-tablet: 5px;
+$card-padding-tablet: 8px;
 $card-padding-desktop: 10px;
 
 .project-card {
   display: flex;
   margin: 0 10px;
   margin-bottom: 10px;
+  color: rgba(0,0,0,0.9);
   
   @media (min-width: breakpoint.$tablet) {
     display: inline-block;
     width: $card-width-tablet;
     padding: $card-padding-tablet;
-    border-radius: 14px;
+    border-radius: 20px;
     background-color: #fff;
     vertical-align: top;
     margin: 0;
@@ -37,8 +38,8 @@ $card-padding-desktop: 10px;
   @media (min-width: breakpoint.$tablet) {
     display: block;
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 8px;
+    border-radius: 13px;
+    margin-bottom: 15px;
   }
 
   @media (min-width: breakpoint.$desktop) {
@@ -58,15 +59,41 @@ $card-padding-desktop: 10px;
 .project-card .title {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: rgba(0,0,0,0.9);
 
   @media (min-width: breakpoint.$desktop) {
     font-size: 24px;
   }
 }
 
+.project-card .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.project-card .tag {
+  font-size: 10px;
+  font-weight: 600;
+  
+  background-color: #E0E0E0;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 3px 8px;
+
+  @media (min-width: breakpoint.$desktop) {
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
 .project-card .description {
-  font-size: 14px;
+  font-size: 15px;
   display: none;
+  margin-bottom: 20px;
 
   @media (min-width: breakpoint.$tablet) {
     display: block;
@@ -74,24 +101,46 @@ $card-padding-desktop: 10px;
 }
 
 .project-card .button-container {
-  // background-color: red;
   display: flex;
   gap: 10px;
 }
 
 .project-card .button {
-  background-color: #ffd977;
   padding: 3px 10px;
   font-size: 14px;
   border-radius: 18px;
   font-weight: 600;
   text-align: center;
+  color: rgba(0,0,0,0.9);
+  transition: 0.1s ease all;
 
   @media (min-width: breakpoint.$tablet) {
     flex-grow: 1;
+    padding: 5px 10px;
   }
   
   @media (min-width: breakpoint.$desktop) {
     font-size: 20px;
+  }
+
+  &.code {
+    background-color: #FFD977;
+  
+    &:hover {
+      background-color: #ffe5a2;
+    }
+  }
+
+  &.demo {
+    background-color: #FF6A6A;
+    display: none;
+  
+    &:hover {
+      background-color: #ff8383;
+    }
+
+    @media (min-width: breakpoint.$tablet) {
+      display: inline-block;
+    }
   }
 }
