@@ -1,4 +1,6 @@
 import { Project } from "./models/Project";
+import personalFinanceImg from "./assets/project-thumbnails/personal-finance.png";
+import personalFinanceGif from "./assets/project-thumbnails/personal-finance.gif";
 import polygonBooleanImg from "./assets/project-thumbnails/polygon-boolean.png";
 import polygonBooleanGif from "./assets/project-thumbnails/polygon-boolean.gif";
 import oncraDataToolImg from "./assets/project-thumbnails/oncra_agc_data_tool.png";
@@ -12,6 +14,15 @@ import zombieGif from "./assets/project-thumbnails/zombieInteractive.gif";
 import { ProjectTag } from "./models/ProjectTag";
 
 export const ProjectList: Project[] = [
+  {
+    name: "Personal Finance App",
+    thumbnail_img: personalFinanceImg,
+    thumbnail_gif: personalFinanceGif,
+    demo_link: "https://francochan.co/personal-finance",
+    code_link: "https://github.com/iamfranco/personal-finance",
+    description: "A Progressive Web App to calculate compound interest, it is installable and works offline",
+    tags: [ProjectTag.React, ProjectTag.TypeScript]
+  },
   {
     name: "Polygon Boolean",
     thumbnail_img: polygonBooleanImg,
