@@ -1,9 +1,11 @@
 @use '../../styles/breakpoint.scss';
 
+$demo-gif-overlay-color: rgba(0, 0, 0, 0.3);
+
 #demo-gif-container {
   height: 150px;
   overflow: hidden;
-  background-image: url('../../assets/background.gif');
+  background-image: linear-gradient(0deg, $demo-gif-overlay-color, $demo-gif-overlay-color), url('../../assets/background.gif');
   background-size: cover;
   background-position: center;
   text-align: center;
