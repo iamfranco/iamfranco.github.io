@@ -3,6 +3,7 @@ export enum ProjectTag {
   TypeScript = 'TypeScript',
   JavaScript = 'JavaScript',
   CSharp = 'C#',
+  Python = 'Python'
   // MongoDB = 'MongoDB',
   // GraphQL = 'GraphQL'
 }
