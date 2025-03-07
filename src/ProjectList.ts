@@ -1,4 +1,6 @@
 import { Project } from "./models/Project";
+import youtubeRagImg from "./assets/project-thumbnails/youtube-rag.png";
+import youtubeRagGif from "./assets/project-thumbnails/youtube-rag.gif";
 import personalFinanceImg from "./assets/project-thumbnails/personal-finance.png";
 import personalFinanceGif from "./assets/project-thumbnails/personal-finance.gif";
 import polygonBooleanImg from "./assets/project-thumbnails/polygon-boolean.png";
@@ -14,6 +16,15 @@ import zombieGif from "./assets/project-thumbnails/zombieInteractive.gif";
 import { ProjectTag } from "./models/ProjectTag";
 
 export const ProjectList: Project[] = [
+  {
+    name: "YouTube RAG Streamlit App",
+    thumbnail_img: youtubeRagImg,
+    thumbnail_gif: youtubeRagGif,
+    demo_link: "https://iamfranco-youtube-rag.streamlit.app/",
+    code_link: "https://github.com/iamfranco/youtube-rag",
+    description: "A Streamlit app that uses RAG to answer user questions for a given YouTube video",
+    tags: [ProjectTag.Python]
+  },
   {
     name: "Personal Finance App",
     thumbnail_img: personalFinanceImg,
